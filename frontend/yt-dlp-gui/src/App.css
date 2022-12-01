@@ -39,3 +39,11 @@
 .read-the-docs {
   color: #888;
 }
+
+.App form {
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-content: center;
+  gap: 10px;
+}

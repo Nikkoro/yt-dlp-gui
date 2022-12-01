@@ -4,7 +4,7 @@
 
 `ffmpeg` from [here](https://github.com/yt-dlp/FFmpeg-Builds/releases)
 
-Extract these files to `binaries` folder. The only files in `binaries` should be
+Extract these files to `binaries` folder. The only files in `binaries` (besides `yt-dlp.conf`) should be
 
 - `ffmpeg.exe`
 

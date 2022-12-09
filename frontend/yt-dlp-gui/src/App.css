@@ -47,3 +47,17 @@
   justify-content: center;
   gap: 10px;
 }
+
+.videoInfoDiv {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.videoInfoDiv img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+}

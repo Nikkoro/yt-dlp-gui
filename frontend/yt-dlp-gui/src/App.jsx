@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -37,6 +37,40 @@ function App() {
         />
         <button>Download</button>
       </form>
+      <VideoInfo url={url} />
+    </div>
+  );
+}
+
+function VideoInfo({ url }) {
+  const [video, setVideo] = useState(null);
+
+  useEffect(() => {
+    if (url) {
+      fetchVideo(url);
+    }
+  }, [url]);
+
+  const fetchVideo = async (url) => {
+    const response = await fetch("http://localhost:3000/video", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ url }),
+    });
+    const data = await response.json();
+    setVideo(data);
+  };
+
+  if (!video) {
+    return null;
+  }
+
+  return (
+    <div className="videoInfoDiv">
+      <img src={video.thumbnail} alt={video.title} />
+      <h2>{video.title}</h2>
     </div>
   );
 }
